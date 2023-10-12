@@ -1,11 +1,14 @@
 package cmd
 
 import (
+	"embed"
 	"fmt"
-	"os"
 
 	"github.com/spf13/cobra"
 )
+
+//go:embed *.txt
+var files embed.FS
 
 var yuiCmd = &cobra.Command{
 	Use:   "yukari",
@@ -13,11 +16,8 @@ var yuiCmd = &cobra.Command{
 	Long:  `Display Yui's ASCII art`,
 	Args:  cobra.NoArgs,
 	Run: func(cmd *cobra.Command, args []string) {
-		b, err := os.ReadFile("aa/yui.txt")
-		if err != nil {
-			fmt.Println(err)
-		}
-		fmt.Println(string(b))
+		yui, _ := files.ReadFile("aa/yui.txt")
+		fmt.Println(yui)
 	},
 }
 
