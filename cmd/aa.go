@@ -6,7 +6,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var createCmd = &cobra.Command{
+var aaCmd = &cobra.Command{
 	Use:   "aa",
 	Short: "Display ASCII art",
 	Long:  `Display ASCII art according to the command entered`,
@@ -14,5 +14,5 @@ var createCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(createCmd)
+	rootCmd.AddCommand(aaCmd)
 }
