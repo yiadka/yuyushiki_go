@@ -22,5 +22,5 @@ var yuiCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(yuiCmd)
+	aaCmd.AddCommand(yuiCmd)
 }
